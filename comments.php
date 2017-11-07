@@ -69,10 +69,33 @@ if ( post_password_required() ) {
 	comment_form(array(
 		'fields' => apply_filters( 'comment_form_default_fields', 
 			array(			
-				'comment_notes_after' 	=> '',	
-				'author' 				=> '<div class="row"><div class="col-sm-4"><div class="comment-form-author"><fieldset><input id="author" name="author" type="text" placeholder="'.esc_html__( 'Name', 'reveal' ). ( $req ? ' *' : '' ).'" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></fieldset></div></div>',
-				'email' 				=> '<div class="col-sm-4"><div class="comment-form-email"><fieldset><input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" placeholder="'. esc_html__( 'Email', 'reveal' ) . ( $req ? ' *' : '' ) .'" ' . $aria_req . ' /></fieldset></div></div>',
-				'url' 					=> '<div class="col-sm-4"><div class="comment-form-url"><fieldset><input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="'.esc_html__( 'Website', 'reveal' ).'" size="30" /></fieldset></div></div></div>'
+				'comment_notes_after'	=> '',	
+				'author' 				=> 
+					'<div class="row">
+						<div class="col-sm-4">
+							<div class="comment-form-author">
+								<fieldset>
+									<input id="author" name="author" type="text" placeholder="'.esc_html__( 'Name', 'reveal' ). ( $req ? ' *' : '' ).'" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' />
+								</fieldset>
+							</div>
+						</div>',
+				'email' 				=> 
+					'<div class="col-sm-4">
+						<div class="comment-form-email">
+							<fieldset>
+								<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" placeholder="'. esc_html__( 'Email', 'reveal' ) . ( $req ? ' *' : '' ) .'" ' . $aria_req . ' />
+							</fieldset>
+						</div>
+					</div>',
+				'url' 					=> 
+					'<div class="col-sm-4">
+						<div class="comment-form-url">
+							<fieldset>
+								<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="'.esc_html__( 'Website', 'reveal' ).'" size="30" />
+							</fieldset>
+						</div>
+					</div>
+				</div>'
 			)
 		),
 
@@ -81,7 +104,11 @@ if ( post_password_required() ) {
 		'title_reply' 					=> esc_html__( 'Leave a Comment', 'reveal' ),
 		'title_reply_to' 				=> esc_html__( 'Leave a  Comment', 'reveal' ),
 		'cancel_reply_link' 			=> esc_html__( 'Cancel Comment', 'reveal' ),	
-		'comment_field' 				=> '<div class="comment-form-comment"><fieldset>' . '<textarea id="comment" placeholder="' . esc_html__( 'Your Comment', 'reveal' ) . ( $req ? ' *' : '' ) . '" name="comment" cols="45" rows="8" aria-required="true"></textarea></fieldset></div>',
+		'comment_field' 				=> 
+			'<div class="comment-form-comment">
+				<fieldset>' . '<textarea id="comment" placeholder="' . esc_html__( 'Your Comment', 'reveal' ) . ( $req ? ' *' : '' ) . '" name="comment" cols="45" rows="8" aria-required="true"></textarea>
+				</fieldset>
+			</div>',
 		'label_submit' 					=> esc_html__( 'Submit Comment', 'reveal' ),
 		'id_submit' 					=> 'submit_my_comment'
 		
